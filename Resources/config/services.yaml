@@ -1,0 +1,17 @@
+services:
+  recaptcha.type:
+    class: Delatlantik\RecaptchaBundle\Type\RecaptchaSubmitType
+    tags: ['form.type']
+    arguments:
+      $key: '%recaptcha.key%'
+  recaptcha.validator:
+    class: Delatlantik\RecaptchaBundle\Constraints\RecaptchaValidator
+    tags: ['validator.constraint_validator']
+    autowire: true
+  ReCaptcha\ReCaptcha:
+    class: ReCaptcha\ReCaptcha
+    arguments:
+      $secret: '%recaptcha.secret%'
+      $requestMethod: '@recaptcha.curl_post'
+  recaptcha.curl_post:
+    class: Delatlantik\RecaptchaBundle\RequestMethod\CurlPost
