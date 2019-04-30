@@ -1,8 +1,10 @@
 {
     "name": "2latlantik/recaptcha",
-    "require": {
-        "google/recaptcha": "^1.2"
-    },
+    "description": "This bundle provide integration or invisible Recaptcha V2",
+    "type": "symfony-bundle",
+    "keywords": [
+        "recaptcha"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -10,6 +12,10 @@
             "email": "nicolascoudenne@gmail.com"
         }
     ],
+    "require": {
+        "php": ">=5.6 || ^7.0",
+        "google/recaptcha": "^1.2"
+    },
     "autoload": {
         "psr-4": {
             "Delatlantik\\RecaptchaBundle\\": ""

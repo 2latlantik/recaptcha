@@ -13,6 +13,6 @@
         }
     </script>
     {% set label = button %}
-    {% set attr = attr | merge ({class: 'g-recaptcha', 'data-sitekey': key, 'data-callback': id ~ 'RecaptchaSubmit'}) %}
+    {% set attr = attr | merge ({class: (attr.class|default('')) ~ ' g-recaptcha', 'data-sitekey': key, 'data-callback': id ~ 'RecaptchaSubmit'}) %}
     {%  block button_widget %}{% endblock %}
 {% endblock %}
